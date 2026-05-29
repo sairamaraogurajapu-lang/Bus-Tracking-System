@@ -1,0 +1,1079 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #dbeafe,
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #bfdbfe,
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #eef4ff,
+      #f8fbff
+    );
+
+  color: #0f172a;
+
+  overflow-x: hidden;
+
+  min-height: 100vh;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0ecff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #1565c0,
+    #42a5f5
+  );
+
+  border-radius: 20px;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+
+  padding: 18px 45px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(
+    13,
+    71,
+    161,
+    0.92
+  );
+
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 8px 24px
+      rgba(0, 0, 0, 0.12),
+    0 2px 8px
+      rgba(21, 101, 192, 0.15);
+}
+
+.navbar h2 {
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  color: white;
+
+  font-size: 17px;
+
+  font-weight: 500;
+
+  position: relative;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 3px;
+
+  background: #ffeb3b;
+
+  border-radius: 20px;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #ffeb3b;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+  width: 95%;
+  max-width: 1600px;
+
+  margin: 35px auto;
+}
+
+.container h1 {
+  font-size: 42px;
+
+  color: #1565c0;
+
+  margin-bottom: 30px;
+
+  font-weight: 800;
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(340px, 1fr)
+    );
+
+  gap: 28px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+  position: relative;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.95
+  );
+
+  border-radius: 28px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 10px 30px
+      rgba(15, 23, 42, 0.08);
+
+  transition: 0.35s ease;
+}
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #1565c0,
+    #42a5f5,
+    #64b5f6
+  );
+}
+
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px
+      rgba(15, 23, 42, 0.14);
+}
+
+.card h2 {
+  color: #2563eb;
+
+  font-size: 28px;
+
+  margin-bottom: 22px;
+
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 17px;
+
+  color: #334155;
+
+  line-height: 1.7;
+
+  margin-bottom: 12px;
+}
+
+.card strong {
+  color: #0f172a;
+}
+
+/* =========================================
+   REMOVE BULLETS
+========================================= */
+
+.card ul {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================
+   BEAUTIFUL LIST ITEMS
+========================================= */
+
+.card li {
+  list-style: none;
+
+  background: #f1f5f9;
+
+  padding: 16px 18px;
+
+  border-radius: 16px;
+
+  margin-bottom: 14px;
+
+  font-size: 17px;
+
+  color: #1e293b;
+
+  transition: 0.3s ease;
+
+  border: 1px solid #e2e8f0;
+
+  display: flex;
+  align-items: center;
+}
+
+.card li:hover {
+  background: #e0ecff;
+
+  transform: translateX(5px);
+}
+
+/* =========================================
+   ROUTE STOP ACTIVE ITEM
+========================================= */
+
+.card li.active-stop {
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #eff6ff
+  );
+
+  border: 2px solid #2563eb;
+
+  color: #0f172a;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   GREEN DOT
+========================================= */
+
+.route-dot {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  margin-right: 12px;
+
+  box-shadow:
+    0 0 12px
+      rgba(34, 197, 94, 0.8);
+}
+
+/* =========================================
+   FULL WIDTH CARD
+========================================= */
+
+.full-width-card {
+  grid-column: 1 / -1;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  padding: 14px 26px;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 8px 18px
+      rgba(37, 99, 235, 0.3);
+
+  margin-right: 14px;
+  margin-bottom: 16px;
+}
+
+button:hover {
+  transform: translateY(-3px)
+    scale(1.03);
+
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #2563eb
+  );
+
+  box-shadow:
+    0 14px 28px
+      rgba(37, 99, 235, 0.4);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* =========================================
+   BUTTON GROUP
+========================================= */
+
+.button-group {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 16px;
+
+  margin-top: 20px;
+}
+
+/* =========================================
+   STATUS CARDS
+========================================= */
+
+.live-status-card {
+  background: linear-gradient(
+    135deg,
+    #e0f2fe,
+    #ffffff
+  );
+
+  border-left: 8px solid
+    #0284c7;
+}
+
+.success-card {
+  background: linear-gradient(
+    135deg,
+    #ecfdf5,
+    #ffffff
+  );
+
+  border-left: 8px solid
+    #16a34a;
+}
+
+.warning-card {
+  background: linear-gradient(
+    135deg,
+    #fefce8,
+    #ffffff
+  );
+
+  border-left: 8px solid
+    #eab308;
+}
+
+/* =========================================
+   ROUTE CONTAINER
+========================================= */
+
+.route-container {
+  position: relative;
+
+  margin-top: 35px;
+
+  padding-left: 90px;
+}
+
+/* =========================================
+   ROUTE LINE
+========================================= */
+
+.route-line {
+  position: absolute;
+
+  left: 42px;
+  top: 0;
+  bottom: 0;
+
+  width: 8px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    to bottom,
+    #2563eb,
+    #60a5fa
+  );
+
+  box-shadow:
+    0 0 18px
+      rgba(96, 165, 250, 0.5);
+}
+
+/* =========================================
+   STOP CARD
+========================================= */
+
+.stop-card {
+  position: relative;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  margin-bottom: 35px;
+
+  border: 2px solid #e2e8f0;
+
+  box-shadow:
+    0 10px 24px
+      rgba(0, 0, 0, 0.08);
+
+  transition: 0.35s ease;
+}
+
+.stop-card:hover {
+  transform: scale(1.02);
+
+  box-shadow:
+    0 18px 36px
+      rgba(0, 0, 0, 0.12);
+}
+
+.stop-card h2 {
+  font-size: 28px;
+
+  margin-bottom: 10px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   CURRENT STOP
+========================================= */
+
+.current-stop {
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #ffffff
+  );
+
+  border-left: 10px solid
+    #2563eb;
+}
+
+/* =========================================
+   STUDENT STOP
+========================================= */
+
+.student-stop {
+  background: linear-gradient(
+    135deg,
+    #dcfce7,
+    #ffffff
+  );
+
+  border-left: 10px solid
+    #16a34a;
+}
+
+/* =========================================
+   PASSED STOP
+========================================= */
+
+.passed-stop {
+  opacity: 0.75;
+}
+
+/* =========================================
+   BUS ICON
+========================================= */
+
+.bus-icon {
+  position: absolute;
+
+  left: -78px;
+  top: 18px;
+
+  font-size: 52px;
+
+  z-index: 100;
+
+  animation: busMove 1s
+    infinite alternate;
+}
+
+@keyframes busMove {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(8px);
+  }
+}
+
+/* =========================================
+   LIVE BADGE
+========================================= */
+
+.live-badge {
+  margin-top: 8px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #60a5fa
+  );
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  padding: 5px 12px;
+
+  border-radius: 30px;
+
+  text-align: center;
+}
+
+/* =========================================
+   DOTS
+========================================= */
+
+.stop-dot {
+  position: absolute;
+
+  left: -52px;
+  top: 35px;
+
+  width: 26px;
+  height: 26px;
+
+  border-radius: 50%;
+
+  border: 4px solid white;
+}
+
+.dot-passed {
+  background: #60a5fa;
+}
+
+.dot-upcoming {
+  background: #cbd5e1;
+}
+
+.dot-student {
+  background: #16a34a;
+}
+
+/* =========================================
+   STATUS BOX
+========================================= */
+
+.status-box {
+  margin-top: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #f8fbff,
+    #ffffff
+  );
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  border: 1px solid #dbeafe;
+}
+
+/* =========================================
+   BIG ETA
+========================================= */
+
+.big-eta {
+  font-size: 68px;
+
+  font-weight: 800;
+
+  color: #16a34a;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-bar {
+  width: 100%;
+
+  height: 16px;
+
+  background: #dbeafe;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  margin-top: 18px;
+}
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa
+  );
+
+  transition: width 0.5s ease;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+select,
+textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid #cbd5e1;
+
+  margin-top: 8px;
+  margin-bottom: 18px;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.3s ease;
+
+  background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 4px
+      rgba(37, 99, 235, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: center;
+  }
+
+  .container h1 {
+    font-size: 34px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .stop-card h2 {
+    font-size: 24px;
+  }
+
+  .route-container {
+    padding-left: 70px;
+  }
+
+  .bus-icon {
+    left: -65px;
+
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    padding: 18px;
+  }
+
+  .navbar h2 {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 14px;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .card h2 {
+    font-size: 22px;
+  }
+
+  .big-eta {
+    font-size: 46px;
+  }
+
+  .route-line {
+    left: 28px;
+  }
+
+  .bus-icon {
+    left: -58px;
+
+    font-size: 36px;
+  }
+
+  .stop-dot {
+    left: -42px;
+  }
+
+  button {
+    width: 100%;
+
+    margin-right: 0;
+  }
+}
+.container {
+  padding: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.focus-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.current-stop {
+  font-size: 40px;
+  color: green;
+}
+
+.next-stop {
+  font-size: 28px;
+  color: #333;
+}
+
+.arrow {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 18px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.next-btn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 10px;
+  background: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.end-btn {
+  width: 100%;
+  padding: 18px;
+  margin-top: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+/* =========================================
+   ADMIN ROUTES BEAUTIFUL UI
+========================================= */
+
+.routes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.route-item {
+  display: block !important;
+
+  background: linear-gradient(
+    135deg,
+    #eef6ff,
+    #ffffff
+  ) !important;
+
+  border: 1px solid #dbeafe !important;
+
+  border-radius: 20px !important;
+
+  padding: 20px !important;
+
+  margin-bottom: 18px !important;
+
+  transition: all 0.3s ease;
+}
+
+.route-item:hover {
+  transform: translateY(-4px);
+
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #ffffff
+  ) !important;
+
+  box-shadow:
+    0 12px 25px
+      rgba(37, 99, 235, 0.15);
+}
+
+.route-bus-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #1565c0;
+
+  margin-bottom: 14px;
+}
+
+.route-path {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 8px;
+
+  line-height: 1.8;
+}
+
+.route-start {
+  background: #dcfce7;
+
+  color: #15803d;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 10px
+      rgba(22, 163, 74, 0.15);
+}
+
+.route-middle {
+  color: #475569;
+
+  font-weight: 500;
+}
+
+.route-end {
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 10px
+      rgba(220, 38, 38, 0.15);
+}
+
+.route-arrow {
+  color: #2563eb;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+/* ROUTE CARD HEADER */
+
+.routes-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* EMPTY ROUTE MESSAGE */
+
+.routes-card p {
+  text-align: center;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+  .route-item {
+    padding: 16px !important;
+  }
+
+  .route-path {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .route-arrow {
+    transform: rotate(90deg);
+  }
+
+  .route-bus-name {
+    font-size: 18px;
+  }
+
+  .route-start,
+  .route-end {
+    width: 100%;
+    text-align: center;
+  }
+}
