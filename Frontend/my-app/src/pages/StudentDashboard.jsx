@@ -1,7 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 function StudentDashboard() {
+  
   const navigate = useNavigate();
 
   const [, setRefresh] =
@@ -559,6 +561,33 @@ function StudentDashboard() {
             )}
           </div>
         </div>
+        {/* BOARD BUS BUTTON */}
+
+<div
+  className="card"
+  style={{
+    marginTop: "30px",
+    textAlign: "center",
+  }}
+>
+  <h2>🚌 Bus Boarding</h2>
+
+  <button
+    onClick={() => {
+      localStorage.setItem(
+        "studentBoarded",
+        "true"
+      );
+
+      navigate(
+        "/location-tracker"
+      );
+    }}
+  >
+    🚌 I Boarded The Bus
+  </button>
+</div>
+
 
         {/* ACCOUNT */}
 
@@ -585,4 +614,4 @@ function StudentDashboard() {
   );
 }
 
-export default StudentDashboard;
+export default StudentDashboard;   
